@@ -59,57 +59,92 @@ a, button {
 /* my reset^^^ */
 
 :root {
-	background-color: ivory;
+	/* color palette from  https://tailwindcss.com/docs/customizing-colors */
+	--col50: #eff6ff;
+	--col100: #dbeafe;
+	--col200: #bfdbfe;
+	--col300: #93c5fd;
+	--col400: #60a5fa;
+	--col500: #3b82f6;
+	--col600: #2563eb;
+	--col700: #1d4ed8;
+	--col800: #1e40af;
+	--col900: #1e3a8a;
 	--icon-size: 25px;
+
+	background-color: var(--col900);
 }
 
 body {
 	font-family: system-ui;
+	display: flex;
+	justify-content: center;
+
+	/* for half & half background */
+	/* background: linear-gradient(90deg, var(--sidebar-color) 50%, var(--content-color) 0, var(--content-color) 100%); */
 }
 
 .container {
+	background-color: var(--col50);
 	display: grid;
+	max-width: 1350px;
+	height: 100%;
 
 	grid:
-	"sidebar   header       "
-	"sidebar   user-module  "
-	"sidebar   main-content "
-	/ 30rem 1fr;
+	"sidebar   header       "   75px
+	"sidebar   user-module  "   100px
+	"sidebar   main-content "   1fr
+	/ 27rem 1fr;
 }
 
 .sidebar {
-	padding: 3rem;
+	padding: 2.4rem;
 	grid-area: sidebar;
 	color: white;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: 500;
-	background-color: darkturquoise;
-
+	background-color: var(--col600);
+	
 	display: grid;
 	/* grid: auto / auto; */
 }
 
+/* :where() is less specific than :is() */
+.sidebar a:where(:link, :visited, :hover, :active) {
+	color: white;
+	text-decoration: none;
+}
 
 .sidebar > ul > li {
-
-	/* delete me */
-	/* outline: 1px dashed white; */
-	
-	margin-bottom: 1rem;
 	display: grid;
 	grid: auto / auto-flow;
 	justify-content: start;
-	gap: 1.75rem;
 	align-items: center;
-	/* align-content: center; */
+	
+	/* Make responsive */
+	
+	/* gap: 1.75rem; */
+	gap: clamp(1rem, 2vw, 3rem);
+	margin-bottom: clamp(0rem, 0.75vw, 1.2rem);
+	/* margin-bottom: 1rem; */
+}
 
-	/* align-content: center; */
+.sidebar > ul > .spacer {
 
+	/* Make responsive */
+	
+	/* margin-bottom: 3rem; */
+	margin-bottom: clamp(0rem, 2vw, 3rem);
 }
 
 .sidebar > ul > li > img {
 	height: var(--icon-size);
-	/* margin: 0 1.3rem; */
+}
+
+.sidebar > ul > li:first-child {
+	font-size: 2.4rem;
+	margin-left: -1rem;
+	gap: 1rem;
 }
 
 /*performant?*/
@@ -118,7 +153,108 @@ body {
 	/* vertical-align: middle; */
 }
 
-img[src*="message"] {
-	/* transform:scaleX(-1); */
-	/* height: ; */
+.sidebar-text {
+	/* visibility: hidden; */
+	/* display: none; */
+}
+
+.header {
+	grid-area: header;
+
+	/* make responsive */
+	padding: 0 2rem;
+	--header-elem-margin: 0 1rem;
+
+
+	/* change me */
+	background-color: white;
+
+	display: grid;
+	grid: auto / auto-flow;
+	/* padding: 1rem; */
+
+	/* outline: 3px dotted; */
+}
+
+.header-left {
+	display: grid;
+	grid: auto / auto-flow;
+	justify-content: start;
+	align-items: center;
+}
+
+.header-left > * {
+	/* delete me */
+	/* outline: 1px dotted gray; */
+	margin: var(--header-elem-margin);
+}
+
+.header-left > .magnifying-glass-icon {
+	height: 25px;
+}
+
+.header-left > input {
+	border-radius: 15px;
+	padding: 0.75rem 1.4rem;
+	border: 0;
+	background-color: #ccc;
+}
+
+.header-right > .notification-bell {
+	height: 25px;
+}
+
+.header-right > .user-avatar {
+	height: 35px;
+	/* border: 5px yellow; */
+}
+
+.user-module {
+	grid-area: user-module;
+	box-shadow: 0px 3px 3px #ccc;
+	position: relative;
+}
+
+.main-content	{
+	grid-area: main-content;
+	background-color: var(--col50);
+
+	display: grid;
+	grid:
+	"cards   announcements  "   1fr
+	"cards   trending       "   1fr
+	/ 3fr 1fr ;
+}
+
+.cards {
+	grid-area: cards;
+}
+
+.announcements {
+	grid-area: announcements;
+	outline: 3px dotted;
+}
+
+.trending {
+	grid-area: trending;
+	outline: 3px dotted;
+}
+
+/* @media screen and (max-width: 700) { */
+@media only screen and (max-width: 700px) {
+	.sidebar-text {
+		/* visibility: hidden; */
+		display: none;
+	}
+
+	.sidebar {
+		width: max-content;
+		/* gap: 5em; */
+
+	}
+
+	.sidebar > ul > li {
+		margin-bottom: 2rem;
+	}
+	
 }
