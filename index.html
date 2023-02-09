@@ -1,1 +1,90 @@
-<!--  -->
+<!-- 
+	https://cdn.statically.io/gh/TheOdinProject/curriculum/43cc6ab69fdfbef40d431a65677d2144668930ac/intermediate_html_css/grid/project_admin_dashboard/imgs/dashboard-project.png
+
+	https://www.theodinproject.com/lessons/intermediate-html-and-css-admin-dashboard
+
+	2 columns
+		sidebar / main
+	3 rows
+		header / user-new-upload-share(name?) / content
+
+	learned how to flip svg image horizontally with
+	transform="scale (-1, 1)" transform-origin="10 (or center)"
+
+
+		to do:
+
+		make settings icon smaller
+		make history icon smaller
+
+		enlarge dashboard icon
+
+		woff2 font
+
+		create basic layout, figure out what to do with edges
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="UTF-8">
+		<title>Admin Dashboard</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="sidebar">
+				<ul>
+					<li><img src="images/icons/dashboard-svgrepo-com.svg" id="dash-icon">Dashboard</li>
+					<li style="color:turquoise">--fix me--</li>
+					<li><img src="images/icons/home-svgrepo-com.svg">Home</li>
+					<li><img src="images/icons/profile-svgrepo-com.svg">Profile</li>
+					<li><img src="images/icons/messages-svgrepo-com.svg">Messages</li>
+					<li><img src="images/icons/history-svgrepo-com.svg" id="history-icon">History</li>
+					<li><img src="images/icons/tasks-svgrepo-com.svg">Tasks</li>
+					<li><img src="images/icons/communities-svgrepo-com.svg">Communities</li>
+					<li style="color:turquoise">--fix me--</li>
+					<li><img src="images/icons/settings-svgrepo-com.svg">Settings</li>
+					<li><img src="images/icons/support-svgrepo-com.svg">Support</li>
+					<li><img src="images/icons/privacy-svgrepo-com.svg">Privacy</li>
+				</ul>
+			</div>
+
+			<div class="header">
+				<!-- search icon -->
+				<!-- search bar -->
+				<!-- bell icon -->
+				<!-- user icon -->
+				<!-- user name -->
+			</div>
+
+			<!-- change class name -->
+			<div class="user-bar">
+				<!-- user icon -->
+				<!-- greet user -->
+				<!-- new button -->
+				<!-- upload button -->
+				<!-- share button -->
+			</div>
+
+			<div class="main-content">
+				<div class="cards">
+					<!-- multiple cards -->
+				</div>
+
+				<div class="announcements">
+					<!-- one column grid -->
+				</div>
+
+				<div class="trending">
+					<!-- one column grid  -->
+				</div>
+			</div>
+			
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,124 @@
+
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  height: 100%;
+}
+
+ol, ul, menu {
+	list-style: none;
+}
+
+button,
+input,
+label,
+select,
+textarea {
+  appearance: none;
+  font-family: inherit;
+	letter-spacing: inherit;
+  font-size: 100%;
+}
+
+button,
+input,
+label,
+select,
+textarea {
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+	outline: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a, button {
+	cursor: pointer;
+}
+/* my reset^^^ */
+
+:root {
+	background-color: ivory;
+	--icon-size: 25px;
+}
+
+body {
+	font-family: system-ui;
+}
+
+.container {
+	display: grid;
+
+	grid:
+	"sidebar   header       "
+	"sidebar   user-module  "
+	"sidebar   main-content "
+	/ 30rem 1fr;
+}
+
+.sidebar {
+	padding: 3rem;
+	grid-area: sidebar;
+	color: white;
+	font-size: 2.5rem;
+	font-weight: 500;
+	background-color: darkturquoise;
+
+	display: grid;
+	/* grid: auto / auto; */
+}
+
+
+.sidebar > ul > li {
+
+	/* delete me */
+	/* outline: 1px dashed white; */
+	
+	margin-bottom: 1rem;
+	display: grid;
+	grid: auto / auto-flow;
+	justify-content: start;
+	gap: 1.75rem;
+	align-items: center;
+	/* align-content: center; */
+
+	/* align-content: center; */
+
+}
+
+.sidebar > ul > li > img {
+	height: var(--icon-size);
+	/* margin: 0 1.3rem; */
+}
+
+/*performant?*/
+#dash-icon {
+	height: calc(var(--icon-size) * 1.7);
+	/* vertical-align: middle; */
+}
+
+img[src*="message"] {
+	/* transform:scaleX(-1); */
+	/* height: ; */
+}

@@ -12,7 +12,7 @@ The dashboard will contain:
 
 + a header
 + a sidebar
-+ a main content area.
++ a main content area
 
 ## My goals for this project
 
