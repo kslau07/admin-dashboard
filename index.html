@@ -6,7 +6,13 @@
 	learned: flip svg image horizontally with
 	transform="scale (-1, 1)" transform-origin="10 (or center)"
 
+	learned: fit-content(10px) only works with ~template~ not grid shorthand
+
 	to do:
+
+	sidebar links need ~15% more b margin
+
+	main-ct bgcolor must be same as search bar
 
 	sidebar:
 	add a gap that decreases as page width shrinks
@@ -127,29 +133,110 @@
 
 			<div class="main-content">
 				<h2 class="cards-title">Your Projects</h2>
-				<div class="cards">
+				<div class="cards-wrapper">
 					<!-- multiple cards -->
 					<!-- (div>lorem30)*7 -->
-					<div>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, ipsum saepe magnam facilis expedita aspernatur blanditiis rerum repellat eos consequuntur fugiat eum harum vel ex et obcaecati officiis excepturi corrupti!
+					<div class="card">
+						<h3>Super Cool Project</h3>
+						<p class="card-content">Quibusdam voluptatum aspernatur voluptatibus, tempore quis iure deleniti magni sed deserunt iste natus?</p>
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
 					</div>
-					<div>
-						In dolor alias accusantium nostrum minima error corporis tenetur? Provident fugit quas ullam quod reiciendis commodi, delectus consequatur impedit culpa, dolor similique sint sunt quasi molestiae? Commodi temporibus maxime quis.
+					<div class="card">
+						<h3>Less Cool Project</h3>
+						<p class="card-content">In dolor alias accusantium nostrum minima error corporis tenetur? Provident fugit quas ullam quod reiciendis commodi, delectus culpa, dolor similique sint sunt quasi molestiae? Commodi temporibus maxime quis.</p>
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
 					</div>
-					<div>
-						Dolor quibusdam tempore amet ducimus voluptates eaque. Est eaque eligendi corporis quas repellendus laborum, temporibus laboriosam dolores ad eum esse reiciendis fugiat. Optio harum corporis molestiae iure, rem perferendis odio.
+					<div class="card">
+						<h3>Impossible App</h3>
+						<p class="card-content">Dolor quibusdam tempore amet ducimus voluptates eaque. Est eaque eligendi corporis quas repellendus laborum, temporibus laboriosam dolores ad eum esse reiciendis fugiat. </p>
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
 					</div>
-					<div>
-						Similique quos natus adipisci culpa deserunt, incidunt cupiditate officia, quae sapiente nobis fugit sed molestias. Possimus vero accusamus, numquam quidem natus itaque, vel, cum eveniet obcaecati tempore accusantium molestias sed.
+					<div class="card">
+						<h3>Easy Peasy App</h3>
+						<p class="card-content">Magni culpa officia sint voluptas excepturi est minus tempore sapiente cupiditate harum itaque sequi nostrum porro ex, nulla deleniti aliquam quos illum tenetur debitis? Ea unde minima optio maiores sapiente?</p>
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
 					</div>
-					<div>
-						Magni culpa officia sint voluptas excepturi est minus tempore sapiente cupiditate harum itaque sequi nostrum porro ex, nulla deleniti aliquam quos illum tenetur debitis? Ea unde minima optio maiores sapiente?
+					<div class="card">
+						<h3>Ad Blocker</h3>
+
+						<p class="card-content">Similique quos natus adipisci culpa deserunt, incidunt cupiditate officia, quae sapiente nobis fugit sed molestias. Possimus vero accusamus, numquam quidem natus itaque, vel, cum eveniet obcaecati tempore accusantium molestias sed. Optio harum corporis molestiae iure, rem perferendis odio.</p>
+
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
+
 					</div>
-					<div>
-						Neque illo modi incidunt sapiente distinctio ipsam molestiae eum, dolore veniam molestias, consequuntur non rerum eligendi accusantium quam quisquam nemo impedit nobis corporis ex! Eius delectus nam suscipit fuga quo?
+					<div class="card">
+						<h3>Money Maker</h3>
+						<p class="card-content">Neque illo modi incidunt sapiente distinctio ipsam molestiae eum, dolore veniam molestias, nemo impedit nobis corporis ex! Eius delectus nam suscipit fuga quo?</p>
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
+
 					</div>
-					<div>
-						Cumque fugiat necessitatibus voluptate doloribus eius nulla error minima repellat, maxime laudantium dolorum rem fugit dicta vel. Officia fugiat, aspernatur culpa soluta totam, cum veniam accusantium molestias rerum debitis non.
+					<div class="card">
+						<h3>Other Project</h3>
+
+						<p class="card-content">Cumque fugiat necessitatibus voluptate doloribus eius nulla error minima repellat, maxime dicta vel. Officia fugiat, aspernatur culpa soluta totam, cum veniam accusantium molestias rerum debitis non.</p>
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
+
+					</div>
+					<div class="card">
+						<h3>Language App</h3>
+
+						<p class="card-content">Cumque fugiat necessitatibus voluptate doloribus eius nulla error minima repellat, maxime dicta vel. Officia fugiat, soluta totam, cum veniam accusantium.</p>
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
+
+					</div>
+					<div class="card">
+						<h3>Restaurant App</h3>
+<p class="card-content">Praesentium velit, nam eaque in fugiat perspiciatis obcaecati nobis placeat earum officia labore quisquam molestiae. Consectetur iste repudiandae impedit qui aliquam vel laudantium repellendus blanditiis veniam explicabo quas voluptate quasi, culpa iusto.</p>
+<div class="card-tools">
+	<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+	<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+	<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+</div>
+
+					</div>
+					<div class="card">
+						<h3>Relaxation App</h3>
+
+						<p class="card-content">Minus sed consequuntur voluptas provident, fuga quod veniam! Autem incidunt nulla tempora neque suscipit quo. Voluptatum quidem distinctio illo dicta eaque maiores quae laborum velit nisi repellendus magni accusamus ullam fuga provident rerum commodi totam incidunt in, fugit officia, nam, animi quis est non. Porro consequuntur impedit laboriosam atque pariatur distinctio officiis facere corporis.</p>
+
+						<div class="card-tools">
+							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
+	
 					</div>
 
 				</div>

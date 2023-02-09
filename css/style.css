@@ -266,7 +266,7 @@ body {
 
 .main-content	{
 	grid-area: main-content;
-	background-color: var(--col50);
+	background-color: var(--col100);
 
 	display: grid;
 	grid:
@@ -278,28 +278,55 @@ body {
 }
 
 h2[class$="title"] {
-	background-color: red;
+	/* background-color: red; */
 }
 
 
 
-.cards {
-	/* background-color: #fff; */
+.cards-wrapper {
 	grid-area: cards;
+	display: grid;
+	grid: auto / repeat(auto-fit, minmax(225px, 1fr));
+	padding: 2rem;
+	gap: 2rem;
+}
+
+.card {
+	/* background-color: red; */
+	background-color: white;
+	box-shadow: 3px 3px 3px #ccc;
+	border-radius: 11px;
+	border-left: 7px solid gold;
 
 	display: grid;
-	/* grid: 25px repeat(auto-fit, minmax(10px, 1fr)) / repeat(auto-fit, minmax(10px, 1fr)); */
-	/* grid-template-rows: 25px ; */
-	/* grid-auto-rows: repeat(auto-fill, 200px); */
-	/* grid-auto-flow: column; */
-	/* grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr)); */
-	/* grid: auto / repeat(auto-fit, minmax(10px, 1fr)); */
-	/* grid: 50px 50px 50px / 50px 50px 50px; */
-	grid: auto / repeat(auto-fit, minmax(200px, 1fr));
+	/* grid: fit-content(10px) fit-content(10px) 1fr; */
+	/* grid-template-rows: repeat(2, fit-content(10px)) 1fr; */
+	grid-template-rows: fit-content(10px) fit-content(10px) 1fr;
+
+	/* grid: 10px 10px 10px; */
+	/* align-items: start; */
+	/* align-content: start; */
 }
 
-.cards > div {
+.card > h3 {
+	/* background-color: chartreuse; */
+	height: min-content;
+	/* align-self: ; */
+}
 
+.card-content { 
+	/* background-color: royalblue; */
+	/* align-self: start; */
+	/* background-color: red; */
+}
+
+.card-tools {
+	align-self: self-end;
+	justify-self: last baseline;
+}
+
+.card-tools > img {
+	height: 25px;
 }
 
 .announcements {
