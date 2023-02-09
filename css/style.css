@@ -171,9 +171,6 @@ body {
 
 	display: grid;
 	grid: auto / auto-flow;
-	/* padding: 1rem; */
-
-	/* outline: 3px dotted; */
 }
 
 .header-left {
@@ -184,8 +181,6 @@ body {
 }
 
 .header-left > * {
-	/* delete me */
-	/* outline: 1px dotted gray; */
 	margin: var(--header-elem-margin);
 }
 
@@ -200,12 +195,18 @@ body {
 	background-color: #ccc;
 }
 
+.header-right {
+	display: grid;
+	grid: auto / auto-flow;
+	align-items: center;
+}
+
 .header-right > .notification-bell {
 	height: 25px;
 }
 
 .header-right > .user-avatar {
-	height: 35px;
+	height: 50px;
 	/* border: 5px yellow; */
 }
 
@@ -213,6 +214,54 @@ body {
 	grid-area: user-module;
 	box-shadow: 0px 3px 3px #ccc;
 	position: relative;
+
+	display: grid;
+	grid: auto / auto-flow;
+
+}
+
+.user-module-left {
+	display: grid;
+	grid:
+	"avatar-large   greeting  "   auto
+	"avatar-large   username  "   auto;
+
+	align-content: center;
+	justify-content: start;
+	/* align-items: center; */
+	font-weight: bold;
+}
+
+.user-module-left > .user-avatar {
+	height: 75px;
+	grid-area: avatar-large;
+}
+
+.user-module-left > span:first-of-type {
+	grid-area: greeting;
+	font-size: 1.4rem;
+	align-self: last baseline;
+}
+.user-module-left > span:last-child {
+	grid-area: username;
+	font-size: 2rem;
+	align-self: first baseline;
+	min-width: max-content;
+}
+
+.user-module-right {
+	display: grid;
+	align-content: center;
+	grid: auto / auto-flow;
+}
+
+.user-module-right > button {
+	background-color: var(--col400);
+	color: white;
+	height: 3.5rem;
+	width: 10rem;
+	border: 0;
+	border-radius: 15px;
 }
 
 .main-content	{
@@ -221,13 +270,36 @@ body {
 
 	display: grid;
 	grid:
-	"cards   announcements  "   1fr
-	"cards   trending       "   1fr
+	"cards-title    announcements-title  "   auto
+	"cards   		 	  announcements        "   1fr
+	"cards   				trending-title       "   auto
+	"cards   				trending             "   1fr
 	/ 3fr 1fr ;
 }
 
+h2[class$="title"] {
+	background-color: red;
+}
+
+
+
 .cards {
+	/* background-color: #fff; */
 	grid-area: cards;
+
+	display: grid;
+	/* grid: 25px repeat(auto-fit, minmax(10px, 1fr)) / repeat(auto-fit, minmax(10px, 1fr)); */
+	/* grid-template-rows: 25px ; */
+	/* grid-auto-rows: repeat(auto-fill, 200px); */
+	/* grid-auto-flow: column; */
+	/* grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr)); */
+	/* grid: auto / repeat(auto-fit, minmax(10px, 1fr)); */
+	/* grid: 50px 50px 50px / 50px 50px 50px; */
+	grid: auto / repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.cards > div {
+
 }
 
 .announcements {
