@@ -6,9 +6,14 @@
 	learned: flip svg image horizontally with
 	transform="scale (-1, 1)" transform-origin="10 (or center)"
 
-	learned: fit-content(10px) only works with ~template~ not grid shorthand
+	learned: fit-content(10px) only works with grid-template~ not grid shorthand
 
 	to do:
+
+	instead of 4 grid-areas, we should have 2 columns for the main-ct
+	that way, the right-side will not be tied to the left-side
+
+	Cards should be a fixed h/w, not varying.
 
 	sidebar links need ~15% more b margin
 
@@ -40,6 +45,21 @@
 
 	add highlight behind sidebar links on hover
 
+	hide overflow and add an ellipses to announcements,
+	that card can be a fixed height
+
+	The dashboard text + icon is like
+	the rest of the links except it is slightly larger.
+
+	We could use the same size as side links
+	then just use calc( var  * 1.2 ) to bump it up slightly.
+	
+	No need to separately change dashboard text+icon
+
+	Fix dashboard logo/img hover animation
+
+	After finishing: try to animate text+img when hover on img (sidebar)
+
 -->
 
 <!DOCTYPE html>
@@ -53,50 +73,69 @@
 	</head>
 	<body>
 		<div class="container">
-			
 			<div class="sidebar">
 				<ul>
 					<li>
-						<img src="images/icons/dashboard-svgrepo-com.svg" id="dash-icon">
-						<span class="sidebar-text">Dashboard</span>
+						<a href="#dashboard">
+							<img src="images/icons/dashboard-svgrepo-com.svg" id="dash-icon" class="sidebar-link">
+							<span class="sidebar-link">Dashboard</span>
+
+						</a>
 					</li>
 					<li class="spacer"></li>
 					<li>
-						<img src="images/icons/home-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Home</span></a>
+						<a href="#home">
+							<img src="images/icons/home-svgrepo-com.svg" class="sidebar-link"><span class="sidebar-link">Home</span>
+						</a>
 					</li>
 					<li>
-						<img src="images/icons/profile-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Profile</span></a>
+						<a href="#profile">
+							<img src="images/icons/profile-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">Profile</span>
+						</a>
 					</li>
 					<li>
-						<img src="images/icons/messages-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Messages</span></a>
+						<a href="#messages">
+							<img src="images/icons/messages-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">Messages</span>
+						</a>
 					</li>
 					<li>
-						<img src="images/icons/history-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">History</span></a>
+						<a href="#history">
+							<img src="images/icons/history-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">History</span>
+						</a>
 					</li>
 					<li>
-						<img src="images/icons/tasks-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Tasks</span></a>
+						<a href="#tasks">
+							<img src="images/icons/tasks-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">Tasks</span>
+						</a>
 					</li>
 					<li>
-						<img src="images/icons/communities-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Communities</span></a>
+						<a href="#communities">
+							<img src="images/icons/communities-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">Communities</span>
+						</a>
 					</li>
 					<li class="spacer"></li>
 					<li>
-						<img src="images/icons/settings-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Settings</span></a>
+						<a href="#settings">
+							<img src="images/icons/settings-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">Settings</span>
+						</a>
 					</li>
 					<li>
-						<img src="images/icons/support-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Support</span></a>
+						<a href="#support">
+							<img src="images/icons/support-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">Support</span>
+						</a>
 					</li>
 					<li>
-						<img src="images/icons/privacy-svgrepo-com.svg">
-						<a href="#"><span class="sidebar-text">Privacy</span></a>
+						<a href="#privacy">
+							<img src="images/icons/privacy-svgrepo-com.svg" class="sidebar-link">
+							<span class="sidebar-link">Privacy</span>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -140,7 +179,7 @@
 						<h3>Super Cool Project</h3>
 						<p class="card-content">Quibusdam voluptatum aspernatur voluptatibus, tempore quis iure deleniti magni sed deserunt iste natus?</p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
@@ -149,7 +188,7 @@
 						<h3>Less Cool Project</h3>
 						<p class="card-content">In dolor alias accusantium nostrum minima error corporis tenetur? Provident fugit quas ullam quod reiciendis commodi, delectus culpa, dolor similique sint sunt quasi molestiae? Commodi temporibus maxime quis.</p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
@@ -158,7 +197,7 @@
 						<h3>Impossible App</h3>
 						<p class="card-content">Dolor quibusdam tempore amet ducimus voluptates eaque. Est eaque eligendi corporis quas repellendus laborum, temporibus laboriosam dolores ad eum esse reiciendis fugiat. </p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
@@ -167,88 +206,106 @@
 						<h3>Easy Peasy App</h3>
 						<p class="card-content">Magni culpa officia sint voluptas excepturi est minus tempore sapiente cupiditate harum itaque sequi nostrum porro ex, nulla deleniti aliquam quos illum tenetur debitis? Ea unde minima optio maiores sapiente?</p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
 					</div>
 					<div class="card">
 						<h3>Ad Blocker</h3>
-
 						<p class="card-content">Similique quos natus adipisci culpa deserunt, incidunt cupiditate officia, quae sapiente nobis fugit sed molestias. Possimus vero accusamus, numquam quidem natus itaque, vel, cum eveniet obcaecati tempore accusantium molestias sed. Optio harum corporis molestiae iure, rem perferendis odio.</p>
-
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
-
 					</div>
 					<div class="card">
 						<h3>Money Maker</h3>
 						<p class="card-content">Neque illo modi incidunt sapiente distinctio ipsam molestiae eum, dolore veniam molestias, nemo impedit nobis corporis ex! Eius delectus nam suscipit fuga quo?</p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
-
 					</div>
 					<div class="card">
 						<h3>Other Project</h3>
-
 						<p class="card-content">Cumque fugiat necessitatibus voluptate doloribus eius nulla error minima repellat, maxime dicta vel. Officia fugiat, aspernatur culpa soluta totam, cum veniam accusantium molestias rerum debitis non.</p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
-
 					</div>
 					<div class="card">
 						<h3>Language App</h3>
-
 						<p class="card-content">Cumque fugiat necessitatibus voluptate doloribus eius nulla error minima repellat, maxime dicta vel. Officia fugiat, soluta totam, cum veniam accusantium.</p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
-
 					</div>
 					<div class="card">
 						<h3>Restaurant App</h3>
-<p class="card-content">Praesentium velit, nam eaque in fugiat perspiciatis obcaecati nobis placeat earum officia labore quisquam molestiae. Consectetur iste repudiandae impedit qui aliquam vel laudantium repellendus blanditiis veniam explicabo quas voluptate quasi, culpa iusto.</p>
-<div class="card-tools">
-	<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
-	<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
-	<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
-</div>
-
-					</div>
-					<div class="card">
-						<h3>Relaxation App</h3>
-
-						<p class="card-content">Minus sed consequuntur voluptas provident, fuga quod veniam! Autem incidunt nulla tempora neque suscipit quo. Voluptatum quidem distinctio illo dicta eaque maiores quae laborum velit nisi repellendus magni accusamus ullam fuga provident rerum commodi totam incidunt in, fugit officia, nam, animi quis est non. Porro consequuntur impedit laboriosam atque pariatur distinctio officiis facere corporis.</p>
-
+						<p class="card-content">Praesentium velit, nam eaque in fugiat perspiciatis obcaecati nobis placeat earum officia labore quisquam molestiae. Consectetur iste repudiandae impedit qui aliquam vel laudantium repellendus blanditiis veniam explicabo quas voluptate quasi, culpa iusto.</p>
 						<div class="card-tools">
-							<img src="images/icons/favorite-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
 							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
 							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
 						</div>
-	
 					</div>
+					<div class="card">
+						<h3>Relaxation App</h3>
+						<p class="card-content">Minus sed consequuntur voluptas provident, fuga quod veniam! Autem incidunt nulla tempora neque suscipit quo. Voluptatum quidem distinctio illo dicta eaque maiores quae laborum velit nisi repellendus magni accusamus ullam fuga provident rerum commodi totam incidunt in, fugit officia, nam, animi quis est non. Porro consequuntur impedit laboriosam atque pariatur distinctio officiis facere corporis.</p>
+						<div class="card-tools">
+							<img src="images/icons/star-svgrepo-com.svg" alt="star favorite icon">
+							<img src="images/icons/eye-plus-svgrepo-com.svg" alt="eye with plus sign icon">
+							<img src="images/icons/share-svgrepo-com.svg" alt="share icon">
+						</div>
+					</div>
+				</div>
 
-				</div>
-				<h2 class="announcements-title">Announcements</h2>
-				<div class="announcements">
-					<!-- one column grid -->
-				</div>
-
-				<h2 class="trending-title">Trending</h2>
-				<div class="trending">
-					<!-- one column grid -->
-				</div>
+					<h2 class="announcements-title">Announcements</h2>
+						<div class="announcements">
+							<div>
+								<h4>Site Maintenance</h4>
+								Debitis placeat consequuntur libero iusto aut excepturi expedita incidunt ad vero, voluptates harum temporibus! Reprehenderit repellendus, natus quaerat temporibus distinctio, dolorem laudantium nisi odit magni? 
+							</div>
+							<div>
+								<h4>Community Share Day</h4>
+								Tempore nesciunt reiciendis, nulla labore corporis dolor, nemo minima nam facere eligendi eos sit, maxime aliquam placeat. Esse dolorum explicabo cum quae quia illo animi ea. 
+							</div>
+							<div>
+								<h4>Updated Privacy Policy</h4>
+								Quos eius aliquam at quisquam vero, eum deserunt provident similique voluptas harum! Error sed similique quaerat voluptatem, illo, incidunt tenetur? Velit quod soluta iure?
+							</div>
+						</div>
+		
+						<h2 class="trending-title">Trending</h2>
+						<div class="trending">
+							<div class="trending-user">
+								<img src="images/husky-svgrepo-com.svg" alt="user avatar" class="user-avatar">
+								<p>@tegan</p>
+								<p>World Peace Builder</p>
+							</div>
+							<div class="trending-user">
+								<img src="images/husky-svgrepo-com.svg" alt="user avatar" class="user-avatar">
+								<p>@tegan</p>
+								<p>World Peace Builder</p>
+							</div>
+							<div class="trending-user">
+								<img src="images/husky-svgrepo-com.svg" alt="user avatar" class="user-avatar">
+								<p>@tegan</p>
+								<p>World Peace Builder</p>
+							</div>
+							<div class="trending-user">
+								<img src="images/husky-svgrepo-com.svg" alt="user avatar" class="user-avatar">
+								<p>@tegan</p>
+								<p>World Peace Builder</p>
+							</div>
+					</div>
 			</div>
 			
 		</div>
