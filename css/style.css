@@ -39,7 +39,6 @@ input,
 label,
 select,
 textarea {
-  /* width: 1px; */
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -56,7 +55,7 @@ img {
 a, button {
 	cursor: pointer;
 }
-/* my reset^^^ */
+/* reset^^^ */
 
 :root {
 	background-size: 250px, auto;
@@ -133,7 +132,6 @@ body {
 	font-size: var(--sidebar-fsz);
 	font-weight: 500;
 }
-
 
 /* :where() is less specific than :is() */
 .sidebar a:where(:link, :visited, :hover, :active) {
@@ -458,7 +456,7 @@ span.sidebar-link:hover {
 
 /* @media only screen and (max-width: 700px), (orientation: portrait)  */
 
-@media only screen and (max-width: 800px), (orientation: portrait) {
+@media only screen and (max-width: 50em), (orientation: portrait) {
 	.header-right > span {
 		display: none;
 	}
@@ -563,7 +561,7 @@ span.sidebar-link:hover {
 }
 
 /* @media screen and (max-width: 700) { */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 45em) {
 	:root {
 		--sidebar-width: clamp(7rem, 35vw - 13rem, 20rem);
 	}
