@@ -95,10 +95,11 @@ a, button {
 	--user-module-btn-gap: clamp(2rem, 4vw - 2rem, 3rem);
 	--user-module-btn-font-sz: clamp(1.2rem, 2vw, 1.6rem);
 	--user-module-btn-height: clamp(2.8rem, 4vw, 3.5rem);
-	--main-content-padding: 1.5rem;
+	--main-content-padding: clamp(1.2rem, 3vw - 1rem, 2.5rem);
 	--main-content-gap: var(--main-content-padding);
 	--cards-wrapper-gap: var(--main-content-padding);
 	--card-padding: 3rem 2rem 2rem;
+	--trending-padding: 2rem 2rem 4rem;
 }
 
 body {
@@ -313,19 +314,18 @@ span.sidebar-link:hover {
 	display: grid;
 	grid:
 	"cards-title    announcements-title   " auto
-	"cards          announcements         " 60rem
-	"cards          trending-title        " 6rem
-	"cards          trending              " 1fr
-	/ 3fr 24rem ;
+	"cards          announcements         " 35rem
+	"cards          trending-title        " 3rem
+	"cards          trending              " auto
+	"cards          ........              " 1fr
+	/ 3fr 24rem;
 }
 
 .cards-wrapper {
 	grid-area: cards;
 	display: grid;
-	/* grid-template-rows: ; */
 	grid: auto-flow 225px / repeat(auto-fit, minmax(275px, 1fr));
 	gap: var(--cards-wrapper-gap);
-	/* padding: 2rem; */
 }
 
 .cards-title,
@@ -356,6 +356,11 @@ span.sidebar-link:hover {
 	/* text-overflow: ellipsis; */
 }
 
+/* delete me */
+.card > * {
+	/* outline: 3px dashed; */
+}
+
 .card > h3 {
 	/* height: min-content; */
 }
@@ -374,29 +379,76 @@ span.sidebar-link:hover {
 	gap: 1.8rem;
 	justify-self: last baseline;
 	display: grid;
+	/* grid-auto-flow: column; */
 	grid: auto / auto-flow;
 	/* outline: 2px dashed; */
 }
 
-.card-tools > img {
+.card-tools img {
 	height: 22px;
 }
 
 .announcements {
 	grid-area: announcements;
 	padding: var(--card-padding);
+	font-size: 1.2rem;
+	font-weight: 400;
+
+	display: grid;
+	height: 100%;
+	grid-template-rows: repeat(3,1fr);
+	/* grid-template-rows: fit-content(125px); */
+	/* grid-template-rows: 125px; */
+	align-content: start;
+
+}
+
+.announcements > div {
+	overflow: hidden;
+	/* outline: 2px dotted; */ 
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #ccc;
+
+}
+
+.announcements > div:last-of-type {
+	margin-bottom: none;
+	border-bottom: none;
 }
 
 .trending {
 	grid-area: trending;
+	display: grid;
+	align-content: start;
+	padding: var(--trending-padding);
+	gap: 1rem;
+
+	/* outline: 2px dashed; */
 }
 
-.trending-user {
+.trending-item {
+	display: grid;
+	grid: 
+	"trending-avatar trending-username" 1fr
+	"trending-avatar trending-app" 1fr
+	/ auto 1fr;
+	font-size: 1.2rem;
+	gap: 0 2rem;
+	/* outline: 2px dashed; */
 
 }
 
-.trending-user > img {
-	height: 25px;
+.trending-item > .trending-avatar {
+	grid-area: trending-avatar;
+	height: 50px;
+}
+.trending-item > .trending-username {
+	align-self: end;
+	font-weight: bold;
+	grid-area: trending-username;
+}
+.trending-item > .trending-app {
+	grid-area: trending-app;
 }
 
 /* mobile tabs */
@@ -442,7 +494,7 @@ span.sidebar-link:hover {
 	}
 
 	/* mobile tabs */
-	/* Show announcements as default */
+	/* Show projects as default */
 	.cards-title {
 		display:none;
 	}
@@ -454,11 +506,11 @@ span.sidebar-link:hover {
 	}
 	.cards-wrapper {
 		grid-area: cards;
-		display: none;
+		/* display: none; */
 	}
 	.announcements {
 		grid-area: cards;
-		display: block;
+		display: none;
 	}
 	.trending {
 		grid-area: cards;
@@ -473,6 +525,8 @@ span.sidebar-link:hover {
 		"cards-title   " 5rem
 		"cards                  " 1fr
 		/ 1fr;
+
+		/* gap: 3rem; */
 	}
 
 	.tabs-wrapper {
@@ -491,6 +545,19 @@ span.sidebar-link:hover {
 		border: none;
 		width: max-content;
 		padding: 0 0.75rem;
+	}
+
+	.cards-wrapper {
+		/* display: grid; */
+		/* grid: auto-flow 100px; */
+		/* gap:2rem; */
+		/* margin: 3rem; */
+		/* gap: rem; */
+	}
+
+	.cards-wrapper > * {
+		/* outline: 3px dotted; */
+		/* gap: 3rem; */
 	}
 	/* mobile tabs */
 }
