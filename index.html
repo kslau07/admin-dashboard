@@ -8,7 +8,17 @@
 
 	learned: fit-content(10px) only works with grid-template~ not grid shorthand
 
+	learned: prefer "auto" with Grid, facilitates display:none
+
+	learned: using area-names makes it easy to shift things around with media queries
+
 	to do:
+
+	When things get brutal, remove announcements + trending, keep project cards only
+
+	Make one of the 2 avatars display:none when <700px
+
+	figure out how which elements to collapse when < 700px
 
 	instead of 4 grid-areas, we should have 2 columns for the main-ct
 	that way, the right-side will not be tied to the left-side
@@ -41,7 +51,7 @@
 
 	fill out "alt=" for images
 
-	make magnifying glass a button that enlarges
+	make magnifying glass a button (that enlarges?)
 
 	add highlight behind sidebar links on hover
 
@@ -77,7 +87,7 @@
 				<ul>
 					<li>
 						<a href="#dashboard">
-							<img src="images/icons/dashboard-svgrepo-com.svg" id="dash-icon" class="sidebar-link">
+							<img src="images/icons/dashboard-svgrepo-com.svg" id="dash-icon" class="sidebar-link" title="Dashboard">
 							<span class="sidebar-link">Dashboard</span>
 
 						</a>
@@ -85,55 +95,55 @@
 					<li class="spacer"></li>
 					<li>
 						<a href="#home">
-							<img src="images/icons/home-svgrepo-com.svg" class="sidebar-link"><span class="sidebar-link">Home</span>
+							<img src="images/icons/home-svgrepo-com.svg" class="sidebar-link" title="Home"><span class="sidebar-link">Home</span>
 						</a>
 					</li>
 					<li>
 						<a href="#profile">
-							<img src="images/icons/profile-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/profile-svgrepo-com.svg" class="sidebar-link" title="Profile">
 							<span class="sidebar-link">Profile</span>
 						</a>
 					</li>
 					<li>
 						<a href="#messages">
-							<img src="images/icons/messages-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/messages-svgrepo-com.svg" class="sidebar-link" title="Message">
 							<span class="sidebar-link">Messages</span>
 						</a>
 					</li>
 					<li>
 						<a href="#history">
-							<img src="images/icons/history-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/history-svgrepo-com.svg" class="sidebar-link" title="History">
 							<span class="sidebar-link">History</span>
 						</a>
 					</li>
 					<li>
 						<a href="#tasks">
-							<img src="images/icons/tasks-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/tasks-svgrepo-com.svg" class="sidebar-link" title="Tasks">
 							<span class="sidebar-link">Tasks</span>
 						</a>
 					</li>
 					<li>
 						<a href="#communities">
-							<img src="images/icons/communities-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/communities-svgrepo-com.svg" class="sidebar-link" title="Communities">
 							<span class="sidebar-link">Communities</span>
 						</a>
 					</li>
 					<li class="spacer"></li>
 					<li>
 						<a href="#settings">
-							<img src="images/icons/settings-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/settings-svgrepo-com.svg" class="sidebar-link" title="Settings">
 							<span class="sidebar-link">Settings</span>
 						</a>
 					</li>
 					<li>
 						<a href="#support">
-							<img src="images/icons/support-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/support-svgrepo-com.svg" class="sidebar-link" title="Support">
 							<span class="sidebar-link">Support</span>
 						</a>
 					</li>
 					<li>
 						<a href="#privacy">
-							<img src="images/icons/privacy-svgrepo-com.svg" class="sidebar-link">
+							<img src="images/icons/privacy-svgrepo-com.svg" class="sidebar-link" title="Privacy">
 							<span class="sidebar-link">Privacy</span>
 						</a>
 					</li>
@@ -151,6 +161,9 @@
 					<span class="username-small">Morgan Oakley</span>
 				</div>
 			</div>
+			
+			<!-- mobile tabs -->
+			
 
 			<!-- change class name -->
 			<div class="user-module">
@@ -158,8 +171,8 @@
 					<!-- grid: 2 columns, 2 rows -->
 					<img src="images/husky-svgrepo-com.svg" alt="user avatar" class="user-avatar">
 					<!-- greet user -->
-					<span>Hi there,</span>
-					<span>Morgan Oakley (@morgan)</span>
+					<span class="greeting-message">Hi there,</span>
+					<span class="greeting-username">Morgan Oakley (@morgan)</span>
 					<!-- username & email -->
 				</div>
 				

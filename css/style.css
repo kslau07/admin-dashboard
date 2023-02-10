@@ -39,7 +39,7 @@ input,
 label,
 select,
 textarea {
-  width: 150px;
+  /* width: 1px; */
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -82,13 +82,21 @@ a, button {
 	--sidebar-text-hover: clamp(0.6rem, 5.5vw - 2rem, 2.4rem);
 	--sidebar-width: clamp(22rem, 24vw, 29rem);
 	--sidebar-gap: clamp(0rem, 3vw - 1rem, 3rem);
-	--sidebar-mar-bottom: clamp(0rem, 0.75vw, 1.5rem);
+	--sidebar-margin-bottom: clamp(0rem, 0.75vw, 1.5rem);
 	--sidebar-spacer: clamp(0rem, 8vw - 4rem, 5rem);
 	--dashboard-fsz: clamp(1rem, 5vw - 1.5rem, 2.4rem);
 	--dashboard-text-hover: clamp(1.1rem, 5.5vw - 1.5rem, 2.8rem);
 	--dashboard-gap: clamp(0rem, 3vw - 1rem, 2rem);
 	--dashboard-icon-height: calc(var(--sidebar-img-height) * 1.7);
-	--header-margin-side: 3rem;
+	--header-padding-sides: 3rem;
+	--search-right-margin: clamp(0rem, 8vw - 2rem, 12rem);
+	--header-gap: clamp(1rem, 4vw - 2rem, 3rem);
+	--user-module-btn-width: clamp(7rem, 10vw, 10rem);
+	--user-module-btn-gap: clamp(2rem, 4vw - 2rem, 3rem);
+	--user-module-btn-font-sz: clamp(1.2rem, 2vw, 1.6rem);
+	--user-module-btn-height: clamp(2.8rem, 4vw, 3.5rem);
+	--main-content-padding: 3rem;
+	--card-padding: 3rem;
 }
 
 body {
@@ -148,7 +156,7 @@ span.sidebar-link:hover {
 	align-items: center;
 	
 	gap: var(--sidebar-gap);
-	margin-bottom: var(--sidebar-mar-bottom);
+	margin-bottom: var(--sidebar-margin-bottom);
 }
 
 .sidebar > ul > .spacer {
@@ -181,16 +189,16 @@ span.sidebar-link:hover {
 	/* change me 500px is not correct */
 	grid-template-columns: 1fr fit-content(500px);
 
-	outline: 2px dotted;
+	/* outline: 2px dotted; */
 
 	/* make responsive */
 	/* padding: 0 2rem; */
-	padding-left: var(--header-margin-side);
-	padding-right: var(--header-margin-side);
+	padding-left: var(--header-padding-sides);
+	padding-right: var(--header-padding-sides);
 
 	/* change me */
 	background-color: white;
-
+	font-weight: bold;
 }
 
 .header-left {
@@ -201,7 +209,8 @@ span.sidebar-link:hover {
 	/* justify-content: start; */
 	align-items: center;
 
-	outline: 2px dashed;
+	/* outline: 2px dashed; */
+	margin-right: var(--search-right-margin);
 }
 
 .header-left > .magnifying-glass-icon {
@@ -215,6 +224,7 @@ span.sidebar-link:hover {
 	background-color: var(--col100);
 	height: 30px;
 	width: 100%;
+	margin-left: 1rem;
 }
 
 .header-right {
@@ -222,6 +232,7 @@ span.sidebar-link:hover {
 	grid: auto / auto-flow;
 	justify-content: end;
 	align-items: center;
+	gap: var(--header-gap);
 }
 
 .header-right > .notification-bell {
@@ -230,17 +241,17 @@ span.sidebar-link:hover {
 
 .header-right > .user-avatar {
 	height: 50px;
-	/* border: 5px yellow; */
 }
 
 .user-module {
+	padding-left: var(--header-padding-sides);
+	padding-right: var(--header-padding-sides);
 	grid-area: user-module;
 	box-shadow: 0px 3px 3px #ccc;
 	position: relative;
 
 	display: grid;
 	grid: auto / auto-flow;
-
 }
 
 .user-module-left {
@@ -260,36 +271,41 @@ span.sidebar-link:hover {
 	grid-area: avatar-large;
 }
 
-.user-module-left > span:first-of-type {
+.user-module-left > .greeting-message {
 	grid-area: greeting;
 	font-size: 1.4rem;
 	align-self: last baseline;
 }
-.user-module-left > span:last-child {
+.user-module-left > .greeting-username {
 	grid-area: username;
 	font-size: 2rem;
 	align-self: first baseline;
-	min-width: max-content;
+	/* min-width: max-content; */
 }
 
 .user-module-right {
 	display: grid;
+	justify-content: end;
 	align-content: center;
+	gap: var(--user-module-btn-gap);
 	grid: auto / auto-flow;
 }
 
 .user-module-right > button {
 	background-color: var(--col400);
 	color: white;
-	height: 3.5rem;
-	width: 10rem;
+	font-size: var(--user-module-btn-font-sz);
+	font-weight: bold;
+	height: var(--user-module-btn-height);
+	width: var(--user-module-btn-width);
 	border: 0;
-	border-radius: 15px;
+	border-radius: 20px;
 }
 
 .main-content	{
 	grid-area: main-content;
 	background-color: var(--col100);
+	/* padding: var(--main-content-padding); */
 
 	display: grid;
 	grid:
@@ -297,16 +313,15 @@ span.sidebar-link:hover {
 	"cards          announcements         " 60rem
 	"cards          trending-title        " 6rem
 	"cards          trending              " 1fr
-	/ 3fr 1fr ;
+	/ 1fr 1fr ;
 }
-
 
 
 .cards-wrapper {
 	grid-area: cards;
 	display: grid;
-	grid: auto / repeat(auto-fit, minmax(225px, 1fr));
-	padding: 2rem;
+	grid: auto-flow 200px / repeat(auto-fit, minmax(100px, 1fr));
+	/* padding: 2rem; */
 	gap: 2rem;
 }
 
@@ -319,6 +334,7 @@ span.sidebar-link:hover {
 }
 
 .card {
+	padding: var(--card-padding);
 	border-left: 7px solid royalblue;
 	display: grid;
 	grid-template-rows: fit-content(10px) fit-content(10px) 1fr;
@@ -354,6 +370,67 @@ span.sidebar-link:hover {
 
 .trending-user > img {
 	height: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+	.header-right {
+		/* display: grid; */
+		/* grid: auto / auto-flow; */
+		/* justify-content: end; */
+		/* align-items: center; */
+		/* gap: var(--header-gap); */
+	}
+
+	.header-right > span {
+		display: none;
+	}
+	
+
+	.user-module {
+		/* grid: auto-flow; */
+		grid-auto-flow: row;
+		/* font-size: 1rem; */
+	}
+
+	.user-module-left {
+		/* grid:
+		"greeting"
+		"username"; */
+		/* font-size: 1rem; */
+		grid: "username";
+		justify-content: center;
+		/* grid-auto-flow: columns; */
+		/* display: grid; */
+		/* grid-template-columns: 50px 50px 50px; */
+		/* grid-template-rows: 50px; */
+	}
+
+	.user-module-left > .greeting-message {
+		display: none;
+		/* grid-area: greeting; */
+		/* font-size: 1.4rem; */
+		/* align-self: last baseline; */
+	}
+
+	.user-module-left > .greeting-username {
+		/* grid-area: username; */
+		font-size: 1.6rem;
+		/* align-self: first baseline; */
+		/* min-width: max-content; */
+	}
+	
+
+	.user-module-left > .user-avatar {
+		display: none;
+	}
+
+	.user-module-right {
+		justify-content: center;
+	}
+
+	.user-module-right > button {
+		/* height: 3rem; */
+	}
 }
 
 /* @media screen and (max-width: 700) { */
@@ -396,5 +473,7 @@ span.sidebar-link:hover {
 		transition: margin-bottom 500ms;
 
 		margin-bottom: 4rem;
-	}	
+	}
+
 }
+
