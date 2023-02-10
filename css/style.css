@@ -76,13 +76,13 @@ a, button {
 	--col900: #1e3a8a;
 	--col1000: #111a6d;
 
-	/* responsive values */
+	/* margin, padding, gap */
 	--sidebar-img-height: 25px;
 	--sidebar-fsz: clamp(0.5rem, 5vw - 2rem, 2rem);
 	--sidebar-text-hover: clamp(0.6rem, 5.5vw - 2rem, 2.4rem);
 	--sidebar-width: clamp(22rem, 24vw, 29rem);
 	--sidebar-gap: clamp(0rem, 3vw - 1rem, 3rem);
-	--sidebar-margin-bottom: clamp(0rem, 0.75vw, 1.5rem);
+	--sidebar-margin-bottom: clamp(1rem, 0.75vw, 1.5rem);
 	--sidebar-spacer: clamp(0rem, 8vw - 4rem, 5rem);
 	--dashboard-fsz: clamp(1rem, 5vw - 1.5rem, 2.4rem);
 	--dashboard-text-hover: clamp(1.1rem, 5.5vw - 1.5rem, 2.8rem);
@@ -95,8 +95,10 @@ a, button {
 	--user-module-btn-gap: clamp(2rem, 4vw - 2rem, 3rem);
 	--user-module-btn-font-sz: clamp(1.2rem, 2vw, 1.6rem);
 	--user-module-btn-height: clamp(2.8rem, 4vw, 3.5rem);
-	--main-content-padding: 3rem;
-	--card-padding: 3rem;
+	--main-content-padding: 1.5rem;
+	--main-content-gap: var(--main-content-padding);
+	--cards-wrapper-gap: var(--main-content-padding);
+	--card-padding: 3rem 2rem 2rem;
 }
 
 body {
@@ -305,7 +307,8 @@ span.sidebar-link:hover {
 .main-content	{
 	grid-area: main-content;
 	background-color: var(--col100);
-	/* padding: var(--main-content-padding); */
+	padding: var(--main-content-padding);
+	gap: var(--main-content-gap);
 
 	display: grid;
 	grid:
@@ -313,22 +316,32 @@ span.sidebar-link:hover {
 	"cards          announcements         " 60rem
 	"cards          trending-title        " 6rem
 	"cards          trending              " 1fr
-	/ 1fr 1fr ;
+	/ 3fr 24rem ;
 }
-
 
 .cards-wrapper {
 	grid-area: cards;
 	display: grid;
-	grid: auto-flow 200px / repeat(auto-fit, minmax(100px, 1fr));
+	/* grid-template-rows: ; */
+	grid: auto-flow 225px / repeat(auto-fit, minmax(275px, 1fr));
+	gap: var(--cards-wrapper-gap);
 	/* padding: 2rem; */
-	gap: 2rem;
+}
+
+.cards-title,
+.announcements-title,
+.trending-title {
+	/* margin-top: ; */
+	font-weight: 500;
+	color: var(--col800);
+	font-size: 2rem;
+	/* color: red; */
 }
 
 .card,
 .announcements,
 .trending {
-	border-radius: 11px;
+	border-radius: 5px;
 	background-color: white;
 	box-shadow: 3px 3px 3px #ccc;
 }
@@ -337,19 +350,32 @@ span.sidebar-link:hover {
 	padding: var(--card-padding);
 	border-left: 7px solid royalblue;
 	display: grid;
-	grid-template-rows: fit-content(10px) fit-content(10px) 1fr;
+	/* grid: 2rem 10rem 1fr / 1fr ; */
+	grid-template-rows: fit-content(10px) 10rem 1fr;
+	/* grid-template-rows: fit-content(10px) 50px 1fr; */
+	/* text-overflow: ellipsis; */
 }
 
 .card > h3 {
-	height: min-content;
+	/* height: min-content; */
 }
 
-.card-content { 
+.card-content {
+	font-size: 1.6rem;
+	font-weight: 300;
+	/* font-weight: bold; */
+
+	overflow: hidden;
 }
 
 .card-tools {
-	align-self: self-end;
+	/* align-self: self-end; */
+	align-content: end;
+	gap: 1.8rem;
 	justify-self: last baseline;
+	display: grid;
+	grid: auto / auto-flow;
+	/* outline: 2px dashed; */
 }
 
 .card-tools > img {
@@ -358,6 +384,7 @@ span.sidebar-link:hover {
 
 .announcements {
 	grid-area: announcements;
+	padding: var(--card-padding);
 }
 
 .trending {
