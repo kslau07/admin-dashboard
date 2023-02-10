@@ -372,54 +372,36 @@ span.sidebar-link:hover {
 	height: 25px;
 }
 
-@media only screen and (max-width: 800px) {
-	.header-right {
-		/* display: grid; */
-		/* grid: auto / auto-flow; */
-		/* justify-content: end; */
-		/* align-items: center; */
-		/* gap: var(--header-gap); */
-	}
+/* mobile tabs */
+.tabs-wrapper {
+	display: none;
+}
 
+/* @media only screen and (max-width: 700px), (orientation: portrait)  */
+
+@media only screen and (max-width: 800px), (orientation: portrait) {
 	.header-right > span {
 		display: none;
 	}
-	
 
 	.user-module {
-		/* grid: auto-flow; */
 		grid-auto-flow: row;
-		/* font-size: 1rem; */
+		box-shadow: none;
 	}
 
 	.user-module-left {
-		/* grid:
-		"greeting"
-		"username"; */
-		/* font-size: 1rem; */
 		grid: "username";
 		justify-content: center;
-		/* grid-auto-flow: columns; */
-		/* display: grid; */
-		/* grid-template-columns: 50px 50px 50px; */
-		/* grid-template-rows: 50px; */
 	}
 
 	.user-module-left > .greeting-message {
 		display: none;
-		/* grid-area: greeting; */
-		/* font-size: 1.4rem; */
-		/* align-self: last baseline; */
 	}
 
 	.user-module-left > .greeting-username {
-		/* grid-area: username; */
 		font-size: 1.6rem;
-		/* align-self: first baseline; */
-		/* min-width: max-content; */
 	}
 	
-
 	.user-module-left > .user-avatar {
 		display: none;
 	}
@@ -431,6 +413,59 @@ span.sidebar-link:hover {
 	.user-module-right > button {
 		/* height: 3rem; */
 	}
+
+	/* mobile tabs */
+	/* Show announcements as default */
+	.cards-title {
+		display:none;
+	}
+	.announcements-title {
+		display:none;
+	}
+	.trending-title {
+		display:none;
+	}
+	.cards-wrapper {
+		grid-area: cards;
+		display: none;
+	}
+	.announcements {
+		grid-area: cards;
+		display: block;
+	}
+	.trending {
+		grid-area: cards;
+		display: none;
+	}
+
+	.main-content	{
+		grid-area: main-content;
+		background-color: var(--col100);
+		display: grid;
+		grid:
+		"cards-title   " 5rem
+		"cards                  " 1fr
+		/ 1fr;
+	}
+
+	.tabs-wrapper {
+		grid-area: cards-title;
+		display: grid;
+		justify-content: space-evenly;
+		grid: auto / auto-flow;
+		background-color: var(--col600);
+	}
+
+	/* Style the buttons inside the tab */
+	.tabs-wrapper button {
+		background-color: var(--col600);
+		color: white;
+		font-weight: bold;
+		border: none;
+		width: max-content;
+		padding: 0 0.75rem;
+	}
+	/* mobile tabs */
 }
 
 /* @media screen and (max-width: 700) { */
@@ -474,6 +509,9 @@ span.sidebar-link:hover {
 
 		margin-bottom: 4rem;
 	}
-
 }
+
+
+
+
 

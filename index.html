@@ -70,6 +70,8 @@
 
 	After finishing: try to animate text+img when hover on img (sidebar)
 
+	Delete "delete me"
+
 -->
 
 <!DOCTYPE html>
@@ -162,8 +164,7 @@
 				</div>
 			</div>
 			
-			<!-- mobile tabs -->
-			
+
 
 			<!-- change class name -->
 			<div class="user-module">
@@ -183,7 +184,21 @@
 				</div>
 			</div>
 
+
+
 			<div class="main-content">
+
+
+				<!-- mobile tabs -->
+				<div class="tabs-wrapper">
+					<button class="btn-trending" onclick="openTab(event, 'trending')">Trending</button>
+					<button class="btn-announcements" onclick="openTab(event, 'announcements')">Announcements</button>
+					<button class="btn-projects" onclick="openTab(event, 'cards-wrapper')">Your Projects</button>
+				</div>
+
+				<!-- mobile tabs -->				
+				
+				
 				<h2 class="cards-title">Your Projects</h2>
 				<div class="cards-wrapper">
 					<!-- multiple cards -->
