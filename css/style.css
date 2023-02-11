@@ -99,6 +99,7 @@ a, button {
 	--cards-wrapper-gap: var(--main-content-padding);
 	--card-padding: 3rem 2rem 2rem;
 	--trending-padding: 2rem 2rem 4rem;
+	--tabs-wrapper-font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 
 body {
@@ -433,7 +434,6 @@ span.sidebar-link:hover {
 	font-size: 1.2rem;
 	gap: 0 2rem;
 	/* outline: 2px dashed; */
-
 }
 
 .trending-item > .trending-avatar {
@@ -521,18 +521,22 @@ span.sidebar-link:hover {
 		display: grid;
 		grid:
 		"cards-title   " 5rem
-		"cards                  " 1fr
-		/ 1fr;
-
-		/* gap: 3rem; */
+		"cards         " 1fr;
+		
+		/* outline: 3px dotted; */
+		
+		padding: 0;
 	}
 
 	.tabs-wrapper {
+		font-size: var(--tabs-wrapper-font-size);
 		grid-area: cards-title;
 		display: grid;
 		justify-content: space-evenly;
 		grid: auto / auto-flow;
 		background-color: var(--col600);
+
+		/* outline: 3px dashed; */
 	}
 
 	/* Style the buttons inside the tab */
@@ -546,19 +550,8 @@ span.sidebar-link:hover {
 	}
 
 	.cards-wrapper {
-		/* display: grid; */
-		/* grid: auto-flow 100px; */
-		/* gap:2rem; */
-		/* margin: 3rem; */
-		/* gap: rem; */
+		padding: 0 var(--main-content-padding);
 	}
-
-	.cards-wrapper > * {
-		/* outline: 3px dotted; */
-		/* gap: 3rem; */
-	}
-	/* mobile tabs */
-}
 
 /* @media screen and (max-width: 700) { */
 @media only screen and (max-width: 45em) {
