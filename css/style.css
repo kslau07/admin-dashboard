@@ -59,7 +59,9 @@ a, button {
 
 :root {
 	background-size: 250px, auto;
-	background-image: url("/images/signal.svg"), 
+	/* content: url(../images/eye-slash.svg); */
+
+	background-image: url(../images/signal.svg), 
 	linear-gradient(110deg, var(--col1000), var(--col1000));
 
 	/* color palette from  https://tailwindcss.com/docs/customizing-colors */
@@ -124,7 +126,7 @@ body {
 .sidebar {
 	display: grid;
 	background-size: 125px, auto;
-	background-image: url("/images/signal.svg"), 
+	background-image: url(../images/signal.svg), 
 		linear-gradient(110deg, var(--col700), indigo);
 
 	padding: 2.4rem;
