@@ -322,6 +322,28 @@ span.sidebar-link:hover {
 	/ 3fr 24rem;
 }
 
+.cards-title {
+	grid-area: cards-title;
+	/* display: block; */
+}
+
+.announcements-title {
+	grid-area: announcements-title;
+	/* display: block; */
+}
+
+.trending-title {
+	grid-area: trending-title;
+	/* display: block; */
+}
+
+.trending {
+	grid-area: trending;
+	/* display: grid; */
+}
+
+
+
 .cards-wrapper {
 	grid-area: cards;
 	display: grid;
@@ -345,6 +367,9 @@ span.sidebar-link:hover {
 	border-radius: 5px;
 	background-color: white;
 	box-shadow: 3px 3px 3px #ccc;
+	visibility: visible;
+	overflow: auto;
+	z-index: 1;
 }
 
 .card {
@@ -456,8 +481,6 @@ span.sidebar-link:hover {
 	display: none;
 }
 
-/* @media only screen and (max-width: 700px), (orientation: portrait)  */
-
 @media only screen and (max-width: 50em), (orientation: portrait) {
 	.header-right > span {
 		display: none;
@@ -506,15 +529,29 @@ span.sidebar-link:hover {
 	}
 	.cards-wrapper {
 		grid-area: cards;
+		z-index: 1;
+		/* overflow: hidden; */
+		/* visibility: hidden; */
+
+		/* display: block; */
 		/* display: none; */
 	}
 	.announcements {
 		grid-area: cards;
-		display: none;
+		z-index: -1;
+
+		/* overflow: hidden; */
+		/* visibility: hidden; */
+
+		/* display: none; */
 	}
 	.trending {
 		grid-area: cards;
-		display: none;
+		z-index: -1;
+
+		/* overflow: hidden; */
+		/* visibility: hidden; */
+		/* display: none; */
 	}
 
 	.main-content	{
@@ -523,11 +560,12 @@ span.sidebar-link:hover {
 		display: grid;
 		grid:
 		"cards-title   " 5rem
-		"cards         " 1fr;
+		"cards         " 1fr
+		"empty1         " 0px;
 		
 		/* outline: 3px dotted; */
 		
-		padding: 0;
+		padding: 0 0 2rem;
 	}
 
 	.tabs-wrapper {
@@ -554,6 +592,12 @@ span.sidebar-link:hover {
 	.cards-wrapper {
 		padding: 0 var(--main-content-padding);
 	}
+
+	.announcements,
+	.trending {
+		margin: 0 var(--main-content-padding);
+	}
+}
 
 /* @media screen and (max-width: 700) { */
 @media only screen and (max-width: 45em) {
@@ -597,8 +641,3 @@ span.sidebar-link:hover {
 		margin-bottom: 4rem;
 	}
 }
-
-
-
-
-
