@@ -35,4 +35,9 @@ And I'll try to further my other css knowledge such as:
 + animations using css
 + textures for backgrounds using svgs
 
+## Known Issues
+
+I tried to implement tabbed pages but something went wrong. Tabs are broken. Come back later to fix it after we complete JavaScript path.
+
 ## After project comments
+
